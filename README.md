@@ -44,5 +44,4 @@ The repository is organized into distinct modules for better maintainability:
 
 ---
 
-## ✍️ Author
-**Niriksha** *Java Full-Stack Development Intern*
+
