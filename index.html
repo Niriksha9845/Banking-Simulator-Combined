@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankingSimulator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Essential styles for the structured result table */
+        #result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #result-table th, #result-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #34495e;
+        }
+        #result-table th {
+            background-color: #34495e;
+            color: #4CAF50;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo">BankingSimulator</div>
+        <div class="nav-buttons">
+            <div id="authButtons">
+                <button onclick="showAuth('loginForm')">Login</button>
+                <button onclick="showAuth('registerForm')">Register</button>
+            </div>
+            <div id="logoutBox" style="display: none;">
+                <button class="logout-btn" onclick="location.reload()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero" id="hero-section">
+            <h1 class="hero-title">Welcome to Banking Simulator</h1>
+            <p>Manage your bank accounts easily. Create new accounts, deposit and withdraw money, transfer funds, and view account details — all in one place.</p>
+            <div class="hero-features">
+                <span>✓ Create Account</span>
+                <span>✓ Deposit & Withdraw</span>
+                <span>✓ Transfer Money</span>
+                <span>✓ View Accounts</span>
+            </div>
+        </div>
+
+        <div id="loginForm" class="section">
+            <h2>Login</h2>
+            <div class="input-container"><input type="email" id="l-email" placeholder="Enter Email"></div>
+            <div class="input-container"><input type="password" id="l-password" placeholder="Enter Password"></div>
+            <div class="button-container"><button onclick="login()">Login</button></div>
+        </div>
+
+        <div id="registerForm" class="section">
+            <h2>Register</h2>
+            <div class="input-container"><input type="text" id="r-name" placeholder="Enter Name"></div>
+            <div class="input-container"><input type="email" id="r-email" placeholder="Enter Email"></div>
+            <div class="input-container"><input type="password" id="r-password" placeholder="Enter Password"></div>
+            <div class="button-container"><button onclick="showAuth('loginForm')">Register</button></div>
+        </div>
+
+        <div id="bankActions" style="display: none;">
+            <div class="button-container">
+                <button onclick="showSection('create')">Create Account</button>
+                <button onclick="showSection('deposit')">Deposite</button>
+                <button onclick="showSection('withdraw')">Withdraw</button>
+                <button onclick="showSection('transfer')">Transfer</button>
+                <button onclick="showSection('view')">View Account</button>
+                <button onclick="showSection('list')">View All Account</button>
+                </div>
+
+            <div id="create" class="section">
+                <h2>Create Account</h2>
+                <div class="input-container"><input type="text" id="c-name" placeholder="Name"></div>
+                <div class="input-container"><input type="email" id="c-email" placeholder="Email"></div>
+                <div class="input-container"><input type="number" id="c-balance" placeholder="Initial Balance"></div>
+                <div class="button-container"><button onclick="createAccount()">Submit</button></div>
+            </div>
+
+            <div id="deposit" class="section">
+                <h2>Deposite Money</h2>
+                <div class="input-container"><input type="text" id="d-acc-num" placeholder="Account Number"></div>
+                <div class="input-container"><input type="number" id="d-amount" placeholder="Amount"></div>
+                <div class="button-container"><button onclick="depositMoney()">Submit</button></div>
+            </div>
+
+            <div id="withdraw" class="section">
+                <h2>Withdraw Money</h2>
+                <div class="input-container"><input type="text" id="w-acc-num" placeholder="Account Number"></div>
+                <div class="input-container"><input type="number" id="w-amount" placeholder="Amount"></div>
+                <div class="button-container"><button onclick="withdrawMoney()">Submit</button></div>
+            </div>
+
+            <div id="transfer" class="section">
+                <h2>Transfer Money</h2>
+                <div class="input-container"><input type="text" id="t-from-acc" placeholder="From Account Number"></div>
+                <div class="input-container"><input type="text" id="t-to-acc" placeholder="To Account Number"></div>
+                <div class="input-container"><input type="number" id="t-amount" placeholder="Amount"></div>
+                <div class="button-container"><button onclick="transferMoney()">Submit</button></div>
+            </div>
+
+            <div id="view" class="section" style="display:none;">
+                <h2>View Account Details</h2>
+                <div class="search-box" style="margin-bottom: 20px; text-align: center;">
+                    <input type="text" id="v-acc-num" placeholder="Enter Account Number">
+                    <button onclick="viewSingleAccount()">Search</button>
+                </div>
+
+                <div id="single-account-result">
+                    <table id="result-table" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Account Number</th>
+                                <th>Holder Name</th>
+                                <th>Email Address</th>
+                                <th>Current Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="single-account-data"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="list" class="section" style="width: 750px;">
+                <h2>All Accounts</h2>
+                <table class="accounts-table">
+                    <thead>
+                        <tr><th>Account Number</th><th>Holder Name</th><th>Email</th><th>Balance</th></tr>
+                    </thead>
+                    <tbody id="accounts-data"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>© 2026 Banking Simulator | All rights reserved</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
