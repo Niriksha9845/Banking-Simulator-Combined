@@ -1,0 +1,139 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* Header & Footer */
+.top-header {
+    background: #1f3a52;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.logout-btn {
+    background: #e74c3c;
+}
+
+/* Sections */
+.section {
+    display: none;
+    width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#list.section {
+    width: 750px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* --- PLAIN WHITE VIEW TABLE --- */
+#result-table, .accounts-table {
+    width: 100%;
+    margin-top: 20px;
+    background: #ffffff; /* Plain White Background */
+    color: #333333;      /* Professional Dark Grey Text */
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #dee2e6; /* Light outer border */
+}
+
+#result-table th, .accounts-table th {
+    background-color: #f8f9fa; /* Very Light Grey Header */
+    color: #1f3a52;           /* Deep Blue Text for Headers */
+    padding: 15px;
+    border-bottom: 2px solid #dee2e6;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#result-table td, .accounts-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1; /* Light thin lines between rows */
+    text-align: center;
+}
+
+#result-table tr:hover {
+    background-color: #fcfcfc; /* Very subtle hover highlight */
+}
+
+.balance-cell {
+    font-weight: bold;
+    color: #000000; /* Bold Black Money Text */
+}
+
+/* Hero Section */
+.hero-title {
+    font-size: 38px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #666;
+    margin-bottom: 20px;
+}
